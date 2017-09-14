@@ -1,0 +1,13 @@
+{% with messages = get_flashed_messages() %} 
+{% if messages %} 
+    {% for message in messages %}
+        <p style="color: red;">{{message}}</p>
+    {% endfor %} 
+{% endif %} 
+{% endwith %}
+<form action="/processlogin" method="POST">
+<label for="email">Email: <input type="email" name="email" value="{{ previous_email }}"></label>
+<label for="password">Password: <input type="password" name="password"></label>
+<input type="submit" value="Submit">
+<input type="reset" value="Reset">
+</form>

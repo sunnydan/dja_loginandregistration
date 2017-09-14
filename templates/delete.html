@@ -1,0 +1,14 @@
+{% with messages = get_flashed_messages() %} 
+{% if messages %} 
+    {% for message in messages %}
+        <p style="color: red;">{{message}}</p>
+    {% endfor %} 
+{% endif %} 
+{% endwith %}
+<h1>Delete User Account?</h1>
+<p>If you are sure you want to delete your user account, enter your password below:</p>
+<form action="/deleteconfirm" method="POST">
+<input type="password" name="password" id="password">
+<input type="submit" name="submit" id="submit">
+<input type="reset">
+</form>

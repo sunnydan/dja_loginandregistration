@@ -1,0 +1,14 @@
+<h1>User Account Site</h1>
+{% if logged_in %}
+<p>Logged in as: {{ email }}</p>
+<a href="/logout">Logout</a>
+{% else %}
+<a href="/login">Login to Account</a>
+<a href="/register">Register an Account</a>
+{% endif %}
+<hr>
+<h1>List of User Accounts</h1>
+{% for user in users%}
+<p>ID: {{ user['id'] }}</p>
+<p>First Name: {{ user['first_name'] }}</p>
+{% endfor %}

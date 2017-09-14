@@ -1,0 +1,17 @@
+{% with messages = get_flashed_messages() %} 
+{% if messages %} 
+    {% for message in messages %}
+        <p style="color: red;">{{message}}</p>
+    {% endfor %} 
+{% endif %} 
+{% endwith %}
+
+<form action="/processregister" method="POST">
+    <label for="email">Email: <input type="email" name="email" value="{{ previous_email }}"></label><br>
+    <label for="first_name">First Name: <input type="text" name="first_name" id="first_name" value="{{ previous_first_name }}"></label><br>
+    <label for="last_name">Last Name: <input type="text" name="last_name" id="last_name" value="{{ previous_last_name }}"></label><br>
+    <label for="password">Password: <input type="password" name="password" id="password"></label><br>
+    <label for="confirm_password">Confirm Password: <input type="password" name="confirm_password" id="confirm_password"></label><br>
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+</form>
